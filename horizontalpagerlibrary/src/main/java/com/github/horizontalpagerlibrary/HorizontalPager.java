@@ -198,6 +198,8 @@ public class HorizontalPager extends ViewGroup {
 
     @Override
     protected boolean onRequestFocusInDescendants(int direction, Rect previouslyFocusedRect) {
+        if(getChildCount() <= 1)
+            return false;
         int focusableScreen;
         if (nextPage != INVALID_SCREEN) {
             focusableScreen = nextPage;
